@@ -45,6 +45,10 @@ y_combined=np.hstack((yTrain,yTest))
 
 lr=LogisticRegression(C=1000.0,random_state=0)
 lr.fit(xTrainStd,yTrain)
+lr.predict_proba(xTestStd[0,:])
+# print(' probabilty of test cases %f ' % lr.predict_proba(xTestStd[0,:]))
+
+
 
 plot_decision_regions(x_combined_std,y_combined,classifier=lr,text_idx=range(105,150))
 plt.xlabel('petal length [standardised]')
